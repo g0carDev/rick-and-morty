@@ -1,3 +1,3 @@
-import episodesReducer from './episodesSlice';
+import episodesReducer from './episodesSlice'
 
-export { episodesReducer };
+export { episodesReducer }

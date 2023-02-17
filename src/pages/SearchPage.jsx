@@ -1,19 +1,18 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
 
-import Grid from "@mui/material/Grid"
-import Pagination from "@mui/material/Pagination"
-import Box from "@mui/material/Box"
-import Typography from "@mui/material/Typography"
+import Grid from '@mui/material/Grid'
+import Pagination from '@mui/material/Pagination'
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
 
-import { useDispatch, useSelector } from "react-redux"
-import { CharacterCard, EpisodeCard } from "../components"
-import { getSearchFetch } from "../redux/search/searchSlice"
-import { Spinner } from "../components/ui"
+import { useDispatch, useSelector } from 'react-redux'
+import { CharacterCard, EpisodeCard } from '../components'
+import { getSearchFetch } from '../redux/search/searchSlice'
+import { Spinner } from '../components/ui'
 
 export const SearchPage = () => {
   const [query, setQuery] = useState('')
-  const [currentPage, setCurrentPage] = useState(1);
-
+  const [currentPage, setCurrentPage] = useState(1)
 
   const { dataSearch, isLoading, pagination } = useSelector((state) => state.search)
 
@@ -40,44 +39,41 @@ export const SearchPage = () => {
     if (query) {
       dispatch(getSearchFetch(query))
     }
-  }, [dispatch, query, searchIn]);
+  }, [dispatch, query, searchIn])
 
   const onChangePagination = (event, value) => {
-    dispatch(getSearchFetch(query));
-    setCurrentPage(value);
-  };
-
+    dispatch(getSearchFetch(query))
+    setCurrentPage(value)
+  }
 
   return (
     <Box>
-      {dataSearch && dataSearch.length > 0 ?
-        <Grid container spacing={2}>
+      {dataSearch && dataSearch.length > 0
+        ? <Grid container spacing={2}>
           {
-            isLoading ? <Spinner />
-              :
-              <>
+            isLoading
+              ? <Spinner />
+              : <>
                 {
-                  searchIn === 'character' ? (
-                    dataSearch.map((character) => (
-                      <CharacterCard key={character.id} character={character} />
-                    ))
-                  )
-                    :
-                    (
-                      dataSearch.map((episode) => (
-                        <EpisodeCard key={episode.id} episode={episode} />
-                      ))
-                    )
+                  searchIn === 'character'
+                    ? (
+                        dataSearch.map((character) => (
+                          <CharacterCard key={character.id} character={character} />
+                        ))
+                      )
+                    : (
+                        dataSearch.map((episode) => (
+                          <EpisodeCard key={episode.id} episode={episode} />
+                        ))
+                      )
                 }
               </>
           }
           <Grid item xs={12}>
-            <Pagination page={currentPage} count={pagination.pages} color="primary" onChange={onChangePagination} />
+            <Pagination page={currentPage} count={pagination.pages} color='primary' onChange={onChangePagination} />
           </Grid>
-        </Grid>
-        : <Typography sx={{ mt: 10 }} variant="h1">There are no information</Typography>
-
-      }
+          </Grid>
+        : <Typography sx={{ mt: 10 }} variant='h1'>There are no information</Typography>}
     </Box>
   )
 }

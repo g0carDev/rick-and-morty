@@ -1,3 +1,3 @@
-import uiReducer from './uiSlice';
+import uiReducer from './uiSlice'
 
-export { uiReducer };
+export { uiReducer }

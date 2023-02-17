@@ -6,28 +6,28 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import Radio from '@mui/material/Radio'
 
 export const ItemFilter = ({
-    formLabel = '',
-    formValue = '',
-    onChange,
-    radios = [],
+  formLabel = '',
+  formValue = '',
+  onChange,
+  radios = []
 }) => {
-    return (
-        <ListItem>
-            <FormControl>
-                <FormLabel id="searchBy">{formLabel}</FormLabel>
-                <RadioGroup
-                    aria-labelledby={formLabel}
-                    name={formLabel}
-                    value={formValue}
-                    onChange={onChange}
-                >
-                    {
+  return (
+    <ListItem>
+      <FormControl>
+        <FormLabel id='searchBy'>{formLabel}</FormLabel>
+        <RadioGroup
+          aria-labelledby={formLabel}
+          name={formLabel}
+          value={formValue}
+          onChange={onChange}
+        >
+          {
                         radios.map(({ value, label }) => (
-                            <FormControlLabel key={value + value} value={value} control={<Radio />} label={label} />
+                          <FormControlLabel key={value + value} value={value} control={<Radio />} label={label} />
                         ))
                     }
-                </RadioGroup>
-            </FormControl>
-        </ListItem>
-    )
+        </RadioGroup>
+      </FormControl>
+    </ListItem>
+  )
 }

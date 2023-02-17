@@ -19,7 +19,6 @@ import { setSearchTerm } from '../../redux/filters/filtersSlice'
 import { routes } from '../../routes'
 import { Filters } from '../Filters'
 
-
 export const SideMenu = () => {
   const [searchLocalTerm, setSearchlocalTerm] = useState('')
 
@@ -77,7 +76,6 @@ export const SideMenu = () => {
             )
             )
           }
-
 
         </List>
       </Box>

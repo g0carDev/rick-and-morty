@@ -42,7 +42,6 @@ export const Navbar = () => {
     onCloseSearch()
   }
 
-
   return (
     <AppBar>
       <Toolbar>
@@ -93,7 +92,7 @@ export const Navbar = () => {
                 </InputAdornment>
               }
             />
-          )
+            )
           : (
             <IconButton
               className='fadeIn'
@@ -102,7 +101,7 @@ export const Navbar = () => {
             >
               <SearchOutlined />
             </IconButton>
-          )}
+            )}
         {/* Pantallas peques */}
         <IconButton
           sx={{ display: { xs: 'flex', sm: 'none' } }}

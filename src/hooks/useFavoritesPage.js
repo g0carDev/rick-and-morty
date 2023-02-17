@@ -1,11 +1,11 @@
-import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux'
 
 export const useFavoritesPage = () => {
-	const { favorites: favoriteEpisodes } = useSelector((state) => state.episodes);
-	const { favorites: favoriteCharacters } = useSelector((state) => state.characters);
+  const { favorites: favoriteEpisodes } = useSelector((state) => state.episodes)
+  const { favorites: favoriteCharacters } = useSelector((state) => state.characters)
 
-	return {
-		favoriteEpisodes,
-		favoriteCharacters,
-	};
-};
+  return {
+    favoriteEpisodes,
+    favoriteCharacters
+  }
+}

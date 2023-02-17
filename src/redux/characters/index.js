@@ -1,3 +1,3 @@
-import charactersReducer from './charactersSlice';
+import charactersReducer from './charactersSlice'
 
-export { charactersReducer };
+export { charactersReducer }

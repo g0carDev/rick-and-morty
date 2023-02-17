@@ -1,12 +1,11 @@
-import { Box, Grid, Typography } from "@mui/material"
-import Image from "mui-image"
+import { Box, Grid, Typography } from '@mui/material'
+import Image from 'mui-image'
 
-import { CharacterCard, EpisodeCard } from "../components"
-import FavoritesImage from "../assets/images/favorites.png"
-import { useFavoritesPage } from "../hooks"
+import { CharacterCard, EpisodeCard } from '../components'
+import FavoritesImage from '../assets/images/favorites.png'
+import { useFavoritesPage } from '../hooks'
 
 export const FavoritesPage = () => {
-
   const { favoriteCharacters, favoriteEpisodes } = useFavoritesPage()
 
   return (
@@ -15,15 +14,14 @@ export const FavoritesPage = () => {
         <Image
           src={FavoritesImage}
           duration={1000}
-          alt="Favorites"
+          alt='Favorites'
         />
       </Box>
       {
-        favoriteEpisodes.length === 0
-          && favoriteCharacters.length === 0
-          ? <Typography sx={{ mt: 10 }} variant="h1" textAlign='center'>There are no favorites</Typography>
-          :
-          <Grid container spacing={2}>
+        favoriteEpisodes.length === 0 &&
+          favoriteCharacters.length === 0
+          ? <Typography sx={{ mt: 10 }} variant='h1' textAlign='center'>There are no favorites</Typography>
+          : <Grid container spacing={2}>
             {
               favoriteCharacters.map((character) => (
                 <CharacterCard key={character.id} character={character} />

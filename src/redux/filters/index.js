@@ -1,3 +1,3 @@
-import filtersReducer from './filtersSlice';
+import filtersReducer from './filtersSlice'
 
-export { filtersReducer };
+export { filtersReducer }

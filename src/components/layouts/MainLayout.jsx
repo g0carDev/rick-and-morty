@@ -21,7 +21,7 @@ export const MainLayout = () => {
 
       <footer>
         <Typography textAlign='center'>
-          Rick and Morty App Created by <Link href='https://g0car.dev' target="_blank">@G0C4R</Link> 2023
+          Rick and Morty App Created by <Link href='https://g0car.dev' target='_blank' rel='noreferrer'>@G0C4R</Link> 2023
         </Typography>
       </footer>
     </>

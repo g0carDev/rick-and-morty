@@ -1,9 +1,9 @@
-import CircularProgress from "@mui/material/CircularProgress"
+import CircularProgress from '@mui/material/CircularProgress'
 
 export const Spinner = () => {
-    return (
-        <div>
-            <CircularProgress /> Loading...
-        </div>
-    )
+  return (
+    <div>
+      <CircularProgress /> Loading...
+    </div>
+  )
 }

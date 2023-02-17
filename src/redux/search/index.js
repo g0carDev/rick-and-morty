@@ -1,3 +1,3 @@
-import searchReducer from './searchSlice';
+import searchReducer from './searchSlice'
 
-export { searchReducer };
+export { searchReducer }
